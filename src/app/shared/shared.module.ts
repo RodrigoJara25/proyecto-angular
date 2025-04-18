@@ -9,6 +9,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import { ReactiveFormsModule } from '@angular/forms';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatInputModule,       // Tabla
     MatSelectModule,      // Tabla
     ReactiveFormsModule,  // Formulario
+    MatTableModule,       // Tabla
   ],
   exports: [
     MatButtonModule,      // Sidenav
@@ -35,6 +37,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatInputModule,       // Tabla
     MatSelectModule,      // Tabla
     ReactiveFormsModule,  // Formulario
+    MatTableModule,       // Tabla
   ]
 })
 export class SharedModule { }
