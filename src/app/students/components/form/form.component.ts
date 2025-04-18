@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Student } from '../../interfaces/student';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'student-form',
@@ -28,7 +28,7 @@ export class FormComponent {
     },
   ];
 
-  constructor(private fb: FormBuilder, private matDialog: MatDialog) {
+  constructor(private fb: FormBuilder, private matDialogRef: MatDialogRef<FormComponent>) {
     this.formGroup = this.fb.group({
       firstName: [''],
       lastName: [''],
@@ -73,5 +73,6 @@ export class FormComponent {
       course: this.formGroup.value.course,
     }
     console.log(student);
+    this.matDialogRef.close();
   }
 }

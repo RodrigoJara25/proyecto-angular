@@ -24,7 +24,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatInputModule,       // Tabla
     MatSelectModule,      // Tabla
     ReactiveFormsModule,  // Formulario
-    // StudentsModule,
   ],
   exports: [
     MatButtonModule,      // Sidenav
