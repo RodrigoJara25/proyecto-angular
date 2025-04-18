@@ -10,9 +10,16 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatTableModule} from '@angular/material/table';
+import { FullNamePipe } from './pipes/full-name.pipe';
+import { LetterNotePipe } from './pipes/letter-note.pipe';
+import { FontSizeDirective } from './directives/font-size.directive';
 
 @NgModule({
   declarations: [
+  
+    FullNamePipe,
+        LetterNotePipe,
+        FontSizeDirective
   ],
   imports: [
     CommonModule,
@@ -38,6 +45,9 @@ import {MatTableModule} from '@angular/material/table';
     MatSelectModule,      // Tabla
     ReactiveFormsModule,  // Formulario
     MatTableModule,       // Tabla
+    FullNamePipe,         // FullName Pipe
+    LetterNotePipe,       // letterNote Pipe
+    FontSizeDirective,    // FontSize Directive
   ]
 })
 export class SharedModule { }

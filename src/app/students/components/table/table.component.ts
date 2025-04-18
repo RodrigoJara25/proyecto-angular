@@ -15,14 +15,15 @@ export class TableComponent {
       lastName: 'Doe',
       email: 'john@gmail.com',
       course: 'angular',
-      createdAt: new Date(2024, 1, 25),
+      note: 17,
     },
     {
       firstName: 'Jane',
       lastName: 'Smith',
       email: 'jane@gmail.com',
       course: 'react',
-    }
+      note: 12,
+    },
   ];
 
   // componentes de la tabla
@@ -30,7 +31,7 @@ export class TableComponent {
     'firstName',
     'email',
     'course',
-    'createdAt'
+    'note'
   ];
 
   dataSource: Student[] = [];

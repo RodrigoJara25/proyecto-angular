@@ -3,5 +3,5 @@ export interface Student {
     lastName: string,
     email: string,
     course: "angular" | "react" | "vue",
-    createdAt?: Date;
+    note?: number;
 }

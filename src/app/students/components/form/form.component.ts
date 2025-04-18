@@ -12,22 +12,6 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 export class FormComponent {
   formGroup: FormGroup;
 
-  // array de Student[]
-  students: Student[] = [
-    {
-      firstName: 'John',
-      lastName: 'Doe',
-      email: 'john@gmail.com',
-      course: 'angular',
-    },
-    {
-      firstName: 'Jane',
-      lastName: 'Smith',
-      email: 'jane@gmail.com',
-      course: 'react',
-    },
-  ];
-
   constructor(private fb: FormBuilder, private matDialogRef: MatDialogRef<FormComponent>) {
     this.formGroup = this.fb.group({
       firstName: [''],
@@ -71,6 +55,7 @@ export class FormComponent {
       lastName: this.formGroup.value.lastName,
       email: this.formGroup.value.email,
       course: this.formGroup.value.course,
+      note: this.formGroup.value.note,
     }
     console.log(student);
     this.matDialogRef.close();
