@@ -25,8 +25,12 @@
             >
                 <mat-icon>menu</mat-icon>
             </button>
-            <span>Registro de Alumnos</span>
-            <span class="example-spacer"></span>
+            <!-- <span>Registro de Alumnos</span>
+            <span class="example-spacer"></span> -->
+            <span *ngIf="userObservable | async as user">
+                Registro de Alumnos - {{ user.username }}
+            </span>
+
             <button
                 mat-icon-button
                 class="example-icon favorite-icon"
