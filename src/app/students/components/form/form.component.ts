@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Student } from '../../interfaces/student';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { CourseService } from '../../../core/services/courses.service';
+import { filter, map } from 'rxjs';
 
 @Component({
   selector: 'student-form',
@@ -11,8 +13,9 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 })
 export class FormComponent {
   formGroup: FormGroup;
+  courseNames!: string[];
 
-  constructor(private fb: FormBuilder, private matDialogRef: MatDialogRef<FormComponent>) {
+  constructor(private fb: FormBuilder, private matDialogRef: MatDialogRef<FormComponent>, private courseService: CourseService) {
     this.formGroup = this.fb.group({
       firstName: [''],
       lastName: [''],
@@ -20,7 +23,18 @@ export class FormComponent {
       course: [''],
     });
 
-    // this.dataSource = this.students; // actualizamos el dataSource cada vez que se actualiza el arraya de estudiantes
+    // Nos suscribimos a un observable
+    this.courseService.getCoursesTitles()
+    this.courseService.coursesTitles$
+    .pipe(
+      filter((courses)=> courses.length > 0),                       // verificamos que hayan courses 
+      map((courses)=>courses.map((course)=>course.toUpperCase())),   // mostramos los cursos en mayuscula
+      map((courses)=> courses.sort((a,b)=>a.localeCompare(b))),      // Ordenamos alfabeticamente
+    )
+    .subscribe((courses)=>{
+      console.log(courses);
+      this.courseNames = courses;
+    })
   }
 
   submit() {

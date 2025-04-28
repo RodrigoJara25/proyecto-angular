@@ -16,9 +16,7 @@
     <mat-form-field>
         <mat-label>Course</mat-label>
         <mat-select formControlName="course">
-            <mat-option value="angular">Angular</mat-option>
-            <mat-option value="react">React</mat-option>
-            <mat-option value="vue">Vue</mat-option>
+            <mat-option *ngFor="let course of courseNames" [value]="course.toLowerCase()">{{course}}</mat-option>
         </mat-select>
     </mat-form-field>
 
