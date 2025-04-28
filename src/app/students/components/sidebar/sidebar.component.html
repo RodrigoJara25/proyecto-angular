@@ -1,0 +1,29 @@
+<mat-drawer-container class="container" autosize>
+    <mat-drawer #drawer class="sidenav" mode="side">
+        <!-- <p>Auto-resizing sidenav</p>
+        @if (showFiller) {
+            <p>Lorem, ipsum dolor sit amet consectetur.</p>
+        }
+        <button (click)="showFiller = !showFiller" mat-raised-button>
+            Toggle extra text
+        </button> -->
+        <h2 appFontSize >App</h2>
+        <mat-list role="list">
+            <mat-list-item role="listitem">Item 1</mat-list-item>
+            <mat-list-item role="listitem">Item 2</mat-list-item>
+            <mat-list-item role="listitem">Item 3</mat-list-item>
+        </mat-list>
+    </mat-drawer>
+
+    <div class="sidenav-content">
+
+        <student-toolbar [drawer]="drawer"></student-toolbar>
+
+        <!-- Formulario -->
+        <student-dialog-form></student-dialog-form>
+
+        <!-- Tabla -->
+        <student-table></student-table>
+        
+    </div>
+</mat-drawer-container>
