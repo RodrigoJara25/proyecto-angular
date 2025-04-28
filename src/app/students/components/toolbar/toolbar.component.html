@@ -1,4 +1,4 @@
-<mat-toolbar>
+<mat-toolbar class="toolbar">
     <button
         mat-icon-button
         class="example-icon"
@@ -7,24 +7,7 @@
     >
         <mat-icon>menu</mat-icon>
     </button>
-    <!-- <span>Registro de Alumnos</span>
-    <span class="example-spacer"></span> -->
     <span *ngIf="userObservable | async as user">
         Registro de Alumnos - {{ user.username }}
     </span>
-
-    <button
-        mat-icon-button
-        class="example-icon favorite-icon"
-        aria-label="Example icon-button with heart icon"
-    >
-        <mat-icon>favorite</mat-icon>
-    </button>
-    <button
-        mat-icon-button
-        class="example-icon"
-        aria-label="Example icon-button with share icon"
-    >
-        <mat-icon>share</mat-icon>
-    </button>
 </mat-toolbar>
